@@ -223,11 +223,11 @@ attach(sleep)
 sleep
 mean(extra) #result -> 1.54
 
-#H0 tidak ada perbedaan yang signifikan
-#H1 ada perbedaan signifikan terhadap waktu tidur
+# H0 tidak ada perbedaan yang signifikan
+# H1 ada perbedaan signifikan terhadap waktu tidur
 
-#H0 diterima jika... p > 0.05
-#H1 diterima jika... p < 0.05
+# H0 diterima jika... p > 0.05
+# H1 diterima jika... p < 0.05
 
 # Significan (p < 0.05)(H1)
 # Significan (p > 0.05)(H0)
@@ -249,6 +249,25 @@ attach(harpo)
 harpo
 
 
+#Tugas 4
+# No.1 Tunjukan proses pengujian paried samples t-test untuk data "chico.Rdata" yang ada pada link
+# berikut http://bit.do/binus_itrm
+attach(chico)
+chico
+mean(grade_test1) #56.98
+mean(grade_test2) #58.385
+total = grade_test1 + grade_test2
+mean(total)
+t.test(total)
 
+
+# No.2 Tunjukan proses pengujian anova untuk data "clinicaltrial.Rdata" yang ada pada link 
+# berikut http://bit.do/binus_itrm
+attach(clin.trial)
+clin.trial
+str(clin.trial)
+
+anovaTest=aov(mood.gain~therapy*drug)
+TukeyHSD(anovaTest)
 
 
